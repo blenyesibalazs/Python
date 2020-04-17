@@ -46,7 +46,29 @@ print('\n\n')
 
 parameters = ticket["issues"][0]["fields"] #new dictionary to house parameters
 
-#for key in parameters:
-#    print(key, parameters[key])
+f = open("C:\PythonFiles\parameters.txt","w+")
 
-execution_desk = ticket["issues"][0]["fields"]["customfield_104814"]["value"]
+
+executionDesk = parameters["customfield_104814"]["value"]
+issueType = parameters["issuetype"]["name"]
+assignee = parameters["assignee"]["name"]
+reporter = parameters["reporter"]["name"]
+createdDate = parameters["created"]
+updatedDate = parameters["updated"]
+priority = parameters["priority"]["name"]
+status = parameters["status"]["name"]
+
+print(executionDesk)
+print(issueType)
+print(assignee)
+print(reporter)
+print(createdDate)
+print(updatedDate)
+print(priority)
+print(status)
+
+f = open("C:\PythonFiles\parameters.txt","w+")
+
+for key in parameters:
+    print(key, parameters[key])
+     
